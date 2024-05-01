@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty Characters | Arthur Rodrigues</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="shortcut icon" href="./assets/rick_icon.png" type="image/x-icon">
+</head>
+<body>
+    <header>
+        <a href="./index.html">
+            <div class="logo">
+                <img class="logo_img" src="./assets/Rick-and-Morty-logo.png" alt="Logo do Star Wars"/>
+                <span class="logo_text">NBA Teams</span>
+            </div>
+        </a>
+        
+        <div class="social_media">
+            <a href="https://www.instagram.com/r99arthur/" target="_blank">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a href="https://www.facebook.com/r99arthur/" target="_blank">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.linkedin.com/in/dsrarthur/" target="_blank">
+                <i class="fa-brands fa-linkedin-in"></i>
+            </a>
+            <a href="https://github.com/r99arthur" target="_blank">
+                <i class="fa-brands fa-github"></i>
+            </a>
+        </div>
+    </header>
+
+    
+
+    <div class="main_container">
+        <h2>Encontre todos os personagens de Rick and Morty aqui</h2>
+        <div class="main_content" id="main_content"></div>
+
+        <div class="buttons">
+            <button id="back_button" disabled>Anterior</button>
+            <button id="next_button" disabled>Próxima</button>
+        </div>
+    </div>
+
+    <div class="modal" id="modal" onclick="hideModal()">
+        <div class="modal_content" id="modal_content"> 
+
+        </div>
+    </div>
+
+    <div class="scroll">
+        <button class="Btn" id="to_top">
+            <svg height="1.2em" class="arrow" viewBox="0 0 512 512"><path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path></svg>
+          <p class="btn_text">Back to Top</p>
+        </button>
+        <button class="Btn" id="to_bottom">
+            <svg height="1.2em" class="arrow_bot" id="arrow_bot" viewBox="0 0 512 512">
+                <path d="M233.4 105.4c12.5-12.5 32.8-12.5 45.3 0l192 192c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L256 173.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l192-192z"></path>
+            </svg>
+            <p class="btn_text">Scroll to Bottom</p>
+        </button>
+        
+    </div>
+      
+
+    <footer>
+        <p class="footer_logo">Rick and Morty Characters</p>
+        <p class="copyright">Desenvolvido por Arthur Rodrigues &copy;</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/db1119f148.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+</body>
+</html>
