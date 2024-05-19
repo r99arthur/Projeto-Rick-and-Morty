@@ -1,6 +1,6 @@
 @import url('https://fonts.cdnfonts.com/css/sporting');
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -9,23 +9,40 @@
     scroll-behavior: smooth;
 }
 
-body{
+body {
     background-image: url('./assets/wallpaperflare.com_wallpaper\ \(1\).jpg');
-    background-size: 100% auto;
+    background-size: cover;
 }
 
-a{
+a {
     text-decoration: none;
 }
 
-header{
+header {
     height: 70px;
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
+    gap: 50%;
+    position: fixed; /* Adiciona essa propriedade */
+    width: 100%; /* Garante que o cabeçalho ocupe toda a largura da tela */
+    background-color: rgba(0, 0, 0, 0.7); /* Adiciona uma cor de fundo opcional */
+    z-index: 1000;
 }
 
-.logo{
+.header{
+    position: absolute;
+    left: 100px;
+}
+.icon {
+    position: absolute;
+    left: 1rem;
+    fill: #9e9ea7;
+    width: 1rem;
+    height: 1rem;
+}
+
+.logo {
     width: 180px;
     height: 90%;
     display: flex;
@@ -33,126 +50,112 @@ header{
     justify-content: center;
 }
 
-.logo_img{
+.logo_img {
     width: 90%;
     height: auto;
 }
 
-.logo_text{
+.logo_text {
     font-family: 'Sporting', sans-serif;
     font-size: 1.3rem;
     color: white;
-
     display: none;
 }
 
-.social_media{
+.social_media {
     width: 130px;
     display: flex;
     justify-content: space-between;
 }
 
-i{
+i {
     font-size: 1.2rem;
 }
 
-i:hover{
+i:hover {
     color: goldenrod;
 }
 
-.main_container{
+.main_container {
     width: 100%;
-    padding: 30p 0;
+    padding: 90px 10px 20px 10px;
     display: flex;
     align-items: center;
     flex-direction: column;
 }
 
-h2{
+h2 {
     font-family: 'Sporting', sans-serif;
     margin-bottom: 20px;
     color: white;
     font-weight: 300;
 }
 
-.main_content{
+.main_content {
     width: 100%;
-
-    display: flex;
+    display: grid;
     justify-content: center;
-    flex-wrap: wrap;
-    column-gap: 20px;
-    row-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 20px;
     padding: 0 20px;
 }
 
-.cards{
+.cards {
     width: 230px;
-    height: 470px;
+    height: 300px;
     padding: 5px;
-    
     background-position: 50% 50%;
     background-size: cover;
-    
     display: flex;
     align-items: end;
-
     border-radius: 8px;
     cursor: pointer;
-    
     transition: 0.5s;
 }
 
-.cards:hover{
+.cards:hover {
     transform: scale(1.02);
 }
 
-.character_name_bg{
+.character_name_bg {
     width: 100%;
     height: 30px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
-    background-color: rgba(0,0,0,0.5);
-
+    background-color: rgba(0, 0, 0, 0.5);
     border-radius: 10px;
 }
 
-.character_name{
+.character_name {
     font-family: 'Sporting', sans-serif;
     color: white;
     font-size: 1rem;
 }
 
-.buttons{
+.buttons {
     width: 60%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
     margin-top: 20px;
 }
 
-button{
+button {
     width: 70px;
     height: 25px;
-    
     background-color: white;
-    
     color: black;
     font-weight: 700;
-
     border-radius: 3px;
     cursor: pointer;
-
     border: 1px solid #000;
     outline: none;
-
     transition: 0.3s;
 }
 
-button:hover{
+button:hover {
     background-color: #000;
     color: white;
 }
@@ -165,9 +168,8 @@ button:hover{
     justify-content: space-between;
     position: fixed;
     bottom: 33%;
-    left: 350px;
+    right: 10px;
 }
-
 
 .Btn {
     width: 45px;
@@ -180,17 +182,17 @@ button:hover{
     cursor: pointer;
     position: relative;
     border: none;
-  }
-  
-  .arrow path {
-    fill: #0a816b;
-  }
+}
 
-  .arrow_bot path {
+.arrow path {
     fill: #0a816b;
-  }
-  
-  .btn_text {
+}
+
+.arrow_bot path {
+    fill: #0a816b;
+}
+
+.btn_text {
     font-size: 0.7em;
     width: 100px;
     position: absolute;
@@ -201,55 +203,54 @@ button:hover{
     bottom: -18px;
     opacity: 0;
     transition-duration: .7s;
-  }
-  
-  .Btn:hover .btn_text {
+}
+
+.Btn:hover .btn_text {
     opacity: 1;
     transition-duration: .7s;
-  }
-  
-  .Btn:hover .arrow {
+}
+
+.Btn:hover .arrow {
     animation: slide-in-bottom .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  }
-  
-  @keyframes slide-in-bottom {
+}
+
+@keyframes slide-in-bottom {
     0% {
-      transform: translateY(10px);
-      opacity: 0;
+        transform: translateY(10px);
+        opacity: 0;
     }
-  
+
     100% {
-      transform: translateY(0);
-      opacity: 1;
+        transform: translateY(0);
+        opacity: 1;
     }
-  }
-  
-  #arrow_bot {
+}
+
+#arrow_bot {
     transform: rotate(180deg);
-  }
-  
-  .Btn:hover .arrow_bot {
+}
+
+.Btn:hover .arrow_bot {
     animation: slide-in-top .7s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
-  }
-  
-  @keyframes slide-in-top {
+}
+
+@keyframes slide-in-top {
     0% {
-      transform: translateY(10px) rotate(180deg);
-      opacity: 0;
+        transform: translateY(10px) rotate(180deg);
+        opacity: 0;
     }
-  
+
     100% {
-      transform: translateY(0) rotate(180deg);
-      opacity: 1;
+        transform: translateY(0) rotate(180deg);
+        opacity: 1;
     }
-  }
-#back_button{
+}
+
+#back_button {
     visibility: hidden;
 }
 
-
-
-footer{
+footer {
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -258,33 +259,32 @@ footer{
     margin: 40px 0 20px 0;
 }
 
-.footer_logo{
+.footer_logo {
     font-family: 'Sporting', sans-serif;
     font-size: 1.5rem;
     font-weight: 500;
 }
 
-.copyright{
+.copyright {
     font-weight: 500;
 }
 
-.modal{
+.modal {
     visibility: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100vw;
     height: 100vh;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
 }
 
-.modal_content{
+.modal_content {
     width: 25vw;
     height: 70vh;
-
-    box-shadow: 0 10px 15px -3px rgb(33, 243, 184),0 4px 6px -4px rgba(33, 243, 205, 0.901);
+    box-shadow: 0 10px 15px -3px rgb(33, 243, 184), 0 4px 6px -4px rgba(33, 243, 205, 0.901);
     border-radius: 10px;
     background-color: #6bcc7d;
     background: linear-gradient(45deg, #04051d 0%, #2b6e5b 100%);
@@ -295,7 +295,7 @@ footer{
     align-items: center;
 }
 
-.character_image{
+.character_image {
     width: 200px;
     height: 200px;
     border-radius: 50%;
@@ -310,9 +310,86 @@ footer{
     color: white;
 }
 
+.container {
+    position: absolute;
+    right: 100px;
+    --size-button: 40px;
+    color: white;
+}
+
+.input {
+    padding-left: var(--size-button);
+    height: var(--size-button);
+    font-size: 15px;
+    border: none;
+    color: #fff;
+    outline: none;
+    width: var(--size-button);
+    transition: all ease 0.3s;
+    background-color: #191A1E;
+    box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+    border-radius: 50px;
+    cursor: pointer;
+}
+
+.input:focus,
+.input:not(:invalid) {
+    width: 200px;
+    cursor: text;
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+}
+
+.input:focus+.icon,
+.input:not(:invalid)+.icon {
+    pointer-events: all;
+    cursor: pointer;
+}
+
+.container .icon {
+    position: absolute;
+    width: var(--size-button);
+    height: var(--size-button);
+    top: 0;
+    left: 0;
+    padding: 8px;
+    pointer-events: none;
+}
+
+.container .icon svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+
 @media screen and (max-width: 768px) {
-    .main_container {
-        display: block;
+
+    .header{
+        position: absolute;
+        left: 20px;
+    }
+
+    .container{
+        position: absolute;
+        right: 20px;
+    }
+
+    .main_container{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .main_content {
+        grid-template-columns: repeat(2, 1fr);
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .cards {
+        width: 200px;
+        height: 180px;
+        /* Adjust height to fit more cards on small screens */
     }
 
     h2 {
@@ -330,22 +407,22 @@ footer{
         justify-content: space-around;
     }
 
-    .modal_content{
-        width: 90vw;
+    .modal_content {
+        width: 70vw;
         height: 50vh;
     }
 
-    .btn_text{
+    .btn_text {
         display: none;
     }
 }
 
-@media screen and (min-width:810px) and (max-width: 1023px){
+@media screen and (min-width: 810px) and (max-width: 1000px) {
     .main_container {
         display: block;
     }
 
-    .scroll{
+    .scroll {
         display: none;
     }
 
@@ -364,38 +441,8 @@ footer{
         justify-content: space-around;
     }
 
-    .modal_content{
+    .modal_content {
         width: 60vw;
         height: 50vh;
-    }
-}
-
-@media screen and (min-width: 1024px) {
-    .main_container {
-        display: block;
-    }
-
-    h2 {
-        text-align: center;
-        margin: 20px;
-    }
-
-    footer {
-        position: relative;
-        bottom: 1.4rem;
-    }
-
-    .buttons {
-        width: 100%;
-        justify-content: space-around;
-    }
-
-    .modal_content{
-        width: 50vw;
-        height: 50vh;
-    }
-
-    .scroll{
-        left: 1400px;
     }
 }

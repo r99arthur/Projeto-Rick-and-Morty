@@ -1,4 +1,6 @@
 let currentPageUrl = 'https://rickandmortyapi.com/api/character'
+const firstPageUrl = 'https://rickandmortyapi.com/api/character/?page=1'
+const lastPageUrl = 'https://rickandmortyapi.com/api/character/?page=42'
 
 window.onload = async () => {
     try {
@@ -13,6 +15,25 @@ window.onload = async () => {
 
     const backButton = document.getElementById('back_button');
     backButton.addEventListener('click', loadPrevPage);
+
+    const firstButton = document.getElementById('first_button');
+    firstButton.addEventListener('click', () => getCharacters(firstPageUrl));
+
+    const lastButton = document.getElementById('last_button');
+    lastButton.addEventListener('click', () => getCharacters(lastPageUrl));
+
+    const searchInput = document.getElementById('search_input');
+    searchInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            searchCharacterByName();
+        }
+    });
+
+    searchInput.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            searchCharacterByName();
+        }
+    });
 };
 
 async function getCharacters(url){
@@ -82,11 +103,19 @@ async function getCharacters(url){
 
         const nextButton = document.getElementById('next_button');
         const backButton = document.getElementById('back_button');
+        const firstButton = document.getElementById('first_button');
+        const lastButton = document.getElementById('last_button');
 
         nextButton.disabled = !responseJson.info.next;
         backButton.disabled = !responseJson.info.prev;
+        firstButton.disabled = url === firstPageUrl;
+        lastButton.disabled = url === lastPageUrl;
 
-        backButton.style.visibility = responseJson.info.prev? 'visible' : 'hidden';
+        backButton.style.visibility = responseJson.info.prev ? 'visible' : 'hidden';
+        nextButton.style.visibility = responseJson.info.next ? 'visible' : 'hidden';
+
+        firstButton.style.visibility = url === firstPageUrl ? 'hidden' : 'visible';
+        lastButton.style.visibility = url === lastPageUrl ? 'hidden' : 'visible';
 
         currentPageUrl = url
 
@@ -126,6 +155,16 @@ async function loadPrevPage(){
     }
 }
 
+async function searchCharacterByName() {
+    const searchInput = document.getElementById('search_input').value.trim().toLowerCase();
+
+    if (searchInput) {
+        const searchUrl = `https://rickandmortyapi.com/api/character/?name=${searchInput}`;
+        await getCharacters(searchUrl);
+    } else {
+        alert('Por favor, insira um nome para buscar.');
+    }
+}
 // MODAL DE INFORMAÇÕES DOS PERSONAGENS //
 
 function hideModal() {
