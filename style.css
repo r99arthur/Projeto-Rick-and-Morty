@@ -138,26 +138,54 @@ h2 {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 50px;
+    gap: 20px;
     margin-top: 20px;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    filter: invert(1);
 }
 
 button {
-    width: 70px;
-    height: 25px;
-    background-color: white;
-    color: black;
+    width: 30px;
+    height: 30px;
+    color: #fff;
     font-weight: 700;
     border-radius: 3px;
     cursor: pointer;
-    border: 1px solid #000;
+    border: none;
     outline: none;
     transition: 0.3s;
+    background-color: transparent;
 }
 
-button:hover {
-    background-color: #000;
-    color: white;
+#next_button{
+    background-image: url('./assets/seta-direita.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#back_button{
+    background-image: url('./assets/seta-esquerda.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#last_button{
+    background-image: url('./assets/simbolo-de-setas-duplas-para-a-direita-para-avancar.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+#first_button{
+    background-image: url('./assets/simbolo-de-setas-duplas-para-a-esquerda.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .scroll {
@@ -174,7 +202,7 @@ button:hover {
 .Btn {
     width: 45px;
     height: 45px;
-    background: linear-gradient(#ffffff, #39fad7);
+    background: linear-gradient(#39fad7, #0a816b);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -185,11 +213,11 @@ button:hover {
 }
 
 .arrow path {
-    fill: #0a816b;
+    fill: #39fad7;
 }
 
 .arrow_bot path {
-    fill: #0a816b;
+    fill: #39fad7;
 }
 
 .btn_text {
@@ -326,8 +354,8 @@ footer {
     outline: none;
     width: var(--size-button);
     transition: all ease 0.3s;
-    background-color: #191A1E;
-    box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #5f5e5e;
+    background-color: #0a816b;
+    box-shadow: 1.5px 1.5px 3px #0e0e0e, -1.5px -1.5px 3px rgb(95 94 94 / 25%), inset 0px 0px 0px #0e0e0e, inset 0px -0px 0px #fff;
     border-radius: 50px;
     cursor: pointer;
 }
@@ -336,7 +364,7 @@ footer {
 .input:not(:invalid) {
     width: 200px;
     cursor: text;
-    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #5f5e5e;
+    box-shadow: 0px 0px 0px #0e0e0e, 0px 0px 0px rgb(95 94 94 / 25%), inset 1.5px 1.5px 3px #0e0e0e, inset -1.5px -1.5px 3px #000;
 }
 
 .input:focus+.icon,
@@ -353,7 +381,12 @@ footer {
     left: 0;
     padding: 8px;
     pointer-events: none;
+    color: #fff;
 }
+
+.container ::-webkit-input-placeholder {
+    color: white;
+ }
 
 .container .icon svg {
     width: 100%;
