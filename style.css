@@ -408,8 +408,13 @@ footer {
     }
 
     .modal_content {
-        width: 70vw;
-        height: 50vh;
+        width: 80vw;
+        height: 60vh;
+        text-align: center  ;
+    }
+
+    .character_name{
+        font-size: .8rem;
     }
 
     .btn_text {
